@@ -3203,4 +3203,8 @@ u-dropdown {
 
 
 /*每个页面公共css */
+.small {
+  font-size: 24rpx;
+  color: #ccc;
+}
 

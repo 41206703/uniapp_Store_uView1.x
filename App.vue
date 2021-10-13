@@ -15,4 +15,8 @@
 <style lang="scss">
 	@import "uview-ui/index.scss";
 	/*每个页面公共css */
+	.small{
+		font-size: 24rpx;
+		color: #ccc;
+	}
 </style>
