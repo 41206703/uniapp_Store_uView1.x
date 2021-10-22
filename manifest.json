@@ -1,6 +1,6 @@
 {
-    "name" : "uView-demo",
-    "appid" : "__UNI__DE5C136",
+    "name" : "吉吉国王的图书商城",
+    "appid" : "__UNI__00FBE05",
     "description" : "",
     "versionName" : "1.5.0",
     "versionCode" : "100",
@@ -62,7 +62,7 @@
     "quickapp" : {},
     /* 小程序特有相关 */
     "mp-weixin" : {
-        "appid" : "wxc256e348c4032ebd",
+        "appid" : "wx978e1f275209775c",
         "setting" : {
             "urlCheck" : false
         },
@@ -81,6 +81,12 @@
         "template" : "template.h5.html",
         "router" : {
             "mode" : "history"
+        },
+        "title" : "吉吉国王的图书商城",
+        "optimization" : {
+            "treeShaking" : {
+                "enable" : true
+            }
         }
     }
 }
