@@ -51,8 +51,7 @@
             "path" : "pages/center/baseInfo",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "修改信息",
-                "enablePullDownRefresh": false
+                "navigationBarTitleText": "修改信息"
             }
             
         }
@@ -60,8 +59,7 @@
             "path" : "pages/goods/goods-detail/goods-detail",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "商品详情",
-                "enablePullDownRefresh": false
+                "navigationBarTitleText": "商品详情"
             }
             
         }
@@ -69,8 +67,7 @@
             "path" : "pages/center/collectGoods",
             "style" :                                                                                    
             {
-                "navigationBarTitleText": "商品收藏",
-                "enablePullDownRefresh": false
+                "navigationBarTitleText": "商品收藏"
             }
             
         }
@@ -79,7 +76,8 @@
 		"navigationBarTextStyle": "black",
 		"navigationBarTitleText": "吉吉国王",
 		"navigationBarBackgroundColor": "#2979ff",
-		"backgroundColor": "#2979ff"
+		"backgroundColor": "#fff",
+		"enablePullDownRefresh":false
 	},
 	"tabBar": {
 	    "color": "#2c2c2c",

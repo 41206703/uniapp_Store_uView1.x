@@ -1,5 +1,5 @@
 <template>
-	<view>
+	<view class="u-p-b-20">
 		<u-swiper :list="swperList" height="328" name="img_url"></u-swiper>
 		<!-- tabs -->
 		<view class="u-text-center u-m-t-20">

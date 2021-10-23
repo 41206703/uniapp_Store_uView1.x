@@ -4,32 +4,30 @@
 			<view class="u-m-r-10 avatar" @tap="previewImage">
 				<u-avatar :src="vuex_user.avatar_url" size="140"></u-avatar>
 			</view>
-			<view class="u-flex-1">
+			<view class="u-flex-1" v-if="Object.keys(userInfo).length">
 				<view class="u-font-18 u-p-b-20">{{userInfo.name}}</view>
 				<view class="u-font-14 u-tips-color">
 					<text>邮箱: {{userInfo.email}}</text>
 					<br>
 					<text class="small">创建日期:{{userInfo.created_at}}</text>
 				</view>
-				
+			</view>
+			<view class="u-flex-1" v-else  @tap="$u.utils.isLogin()">
+				<view class="u-font-18 u-p-b-20">未登录</view>
 			</view>
 		</view>
 		
 		<view class="u-m-t-20">
 			<u-cell-group>
-				<u-cell-item icon="account" title="修改信息" @tap="jump('pages/center/baseInfo')"></u-cell-item>
+				<u-cell-item icon="account" title="修改信息" @tap="updateMsg"></u-cell-item>
 			</u-cell-group>
 		</view>
 		<view class="u-m-t-20">
 			<u-cell-group>
-				<u-cell-item icon="rmb-circle" title="所有订单"></u-cell-item>
-				<u-cell-item icon="star" title="商品收藏" @tap="jump('pages/center/collectGoods')"></u-cell-item>
-				<u-cell-item icon="map" title="收货地址"></u-cell-item>
+				<u-cell-item icon="star" title="商品收藏" @tap="showCollect"></u-cell-item>
 			</u-cell-group>
 		</view>
-		
-		<view class="u-m-t-20">
-			
+		<view class="u-m-t-20" v-if="Object.keys(userInfo).length">
 			<u-button type="error" :ripple="true" @click="showLoginout">退出登录</u-button>
 		</view>
 		<!-- 退出登录模态框 -->
@@ -45,9 +43,9 @@
 				userInfo:{}
 			}
 		},
-		onShow() {
+		onLoad() {
 			// 判断是否处于登录状态、如果未登录跳转登录页
-			this.$u.utils.isLogin()
+			// this.$u.utils.isLogin()
 			// 如果已经登录，拿取信息
 			this.userInfo=this.vuex_user
 		},
@@ -58,9 +56,25 @@
 					urls:[this.userInfo.avatar_url]
 				})
 			},
+			// 页面跳转
 			jump(path){
 				this.$u.route(path)
 			},
+			// 点击修改信息
+			updateMsg(){
+				if(!this.$u.utils.isLogin()){}// 如果没有登录先去登录
+				else{
+					this.jump('/pages/center/baseInfo')
+				}
+			},
+			// 点击查看收藏
+			showCollect(){
+				if(!this.$u.utils.isLogin()){}// 如果没有登录先去登录
+				else{
+					this.jump('pages/center/collectGoods')
+				}
+			},
+			
 			// 出现模态框
 			showLoginout(){
 				this.isShowLoginout=!this.isShowLoginout

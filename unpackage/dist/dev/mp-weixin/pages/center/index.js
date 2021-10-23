@@ -96,19 +96,19 @@ var components
 try {
   components = {
     uAvatar: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-avatar/u-avatar */ "uview-ui/components/u-avatar/u-avatar").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-avatar/u-avatar.vue */ 163))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-avatar/u-avatar */ "uview-ui/components/u-avatar/u-avatar").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-avatar/u-avatar.vue */ 171))
     },
     uCellGroup: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-cell-group/u-cell-group */ "uview-ui/components/u-cell-group/u-cell-group").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-cell-group/u-cell-group.vue */ 170))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-cell-group/u-cell-group */ "uview-ui/components/u-cell-group/u-cell-group").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-cell-group/u-cell-group.vue */ 178))
     },
     uCellItem: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-cell-item/u-cell-item */ "uview-ui/components/u-cell-item/u-cell-item").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-cell-item/u-cell-item.vue */ 177))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-cell-item/u-cell-item */ "uview-ui/components/u-cell-item/u-cell-item").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-cell-item/u-cell-item.vue */ 185))
     },
     uButton: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-button/u-button */ "uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-button/u-button.vue */ 240))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-button/u-button */ "uview-ui/components/u-button/u-button").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-button/u-button.vue */ 192))
     },
     uModal: function() {
-      return __webpack_require__.e(/*! import() | uview-ui/components/u-modal/u-modal */ "uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-modal/u-modal.vue */ 184))
+      return __webpack_require__.e(/*! import() | uview-ui/components/u-modal/u-modal */ "uview-ui/components/u-modal/u-modal").then(__webpack_require__.bind(null, /*! @/uview-ui/components/u-modal/u-modal.vue */ 199))
     }
   }
 } catch (e) {
@@ -132,6 +132,24 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
+  var g0 = Object.keys(_vm.userInfo)
+  var g1 = Object.keys(_vm.userInfo)
+
+  if (!_vm._isMounted) {
+    _vm.e0 = function($event) {
+      return _vm.$u.utils.isLogin()
+    }
+  }
+
+  _vm.$mp.data = Object.assign(
+    {},
+    {
+      $root: {
+        g0: g0,
+        g1: g1
+      }
+    }
+  )
 }
 var recyclableRender = false
 var staticRenderFns = []
@@ -202,8 +220,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
 var _default =
 {
   data: function data() {
@@ -212,9 +228,9 @@ var _default =
       userInfo: {} };
 
   },
-  onShow: function onShow() {
+  onLoad: function onLoad() {
     // 判断是否处于登录状态、如果未登录跳转登录页
-    this.$u.utils.isLogin();
+    // this.$u.utils.isLogin()
     // 如果已经登录，拿取信息
     this.userInfo = this.vuex_user;
   },
@@ -225,9 +241,25 @@ var _default =
         urls: [this.userInfo.avatar_url] });
 
     },
+    // 页面跳转
     jump: function jump(path) {
       this.$u.route(path);
     },
+    // 点击修改信息
+    updateMsg: function updateMsg() {
+      if (!this.$u.utils.isLogin()) {} // 如果没有登录先去登录
+      else {
+          this.jump('/pages/center/baseInfo');
+        }
+    },
+    // 点击查看收藏
+    showCollect: function showCollect() {
+      if (!this.$u.utils.isLogin()) {} // 如果没有登录先去登录
+      else {
+          this.jump('pages/center/collectGoods');
+        }
+    },
+
     // 出现模态框
     showLoginout: function showLoginout() {
       this.isShowLoginout = !this.isShowLoginout;

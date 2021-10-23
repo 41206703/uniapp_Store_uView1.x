@@ -914,7 +914,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"吉吉国王的图书商城","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"吉吉国王的图书商城","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -8605,7 +8605,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"吉吉国王的图书商城","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"VUE_APP_NAME":"吉吉国王的图书商城","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -8626,14 +8626,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"吉吉国王的图书商城","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"吉吉国王的图书商城","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"吉吉国王的图书商城","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"VUE_APP_NAME":"吉吉国王的图书商城","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -8719,7 +8719,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"吉吉国王的图书商城","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"VUE_APP_NAME":"吉吉国王的图书商城","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -10234,7 +10234,55 @@ guid;exports.default = _default;
 
 /***/ }),
 
-/***/ 266:
+/***/ 27:
+/*!***************************************************************************!*\
+  !*** F:/谷歌浏览器下载区/uView-cli/uView_default/uview-ui/libs/function/color.js ***!
+  \***************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // 为了让用户能够自定义主题，会逐步弃用此文件，各颜色通过css提供
+// 为了给某些特殊场景使用和向后兼容，无需删除此文件(2020-06-20)
+var color = {
+  primary: "#2979ff",
+  primaryDark: "#2b85e4",
+  primaryDisabled: "#a0cfff",
+  primaryLight: "#ecf5ff",
+  bgColor: "#f3f4f6",
+
+  info: "#909399",
+  infoDark: "#82848a",
+  infoDisabled: "#c8c9cc",
+  infoLight: "#f4f4f5",
+
+  warning: "#ff9900",
+  warningDark: "#f29100",
+  warningDisabled: "#fcbd71",
+  warningLight: "#fdf6ec",
+
+  error: "#fa3534",
+  errorDark: "#dd6161",
+  errorDisabled: "#fab6b6",
+  errorLight: "#fef0f0",
+
+  success: "#19be6b",
+  successDark: "#18b566",
+  successDisabled: "#71d5a1",
+  successLight: "#dbf1e1",
+
+  mainColor: "#303133",
+  contentColor: "#606266",
+  tipsColor: "#909399",
+  lightColor: "#c0c4cc",
+  borderColor: "#e4e7ed" };var _default =
+
+
+color;exports.default = _default;
+
+/***/ }),
+
+/***/ 274:
 /*!*************************************************************************!*\
   !*** F:/谷歌浏览器下载区/uView-cli/uView_default/uview-ui/libs/util/emitter.js ***!
   \*************************************************************************/
@@ -10294,7 +10342,7 @@ function _broadcast(componentName, eventName, params) {
 
 /***/ }),
 
-/***/ 267:
+/***/ 275:
 /*!*********************************************************************************!*\
   !*** F:/谷歌浏览器下载区/uView-cli/uView_default/uview-ui/libs/util/async-validator.js ***!
   \*********************************************************************************/
@@ -10324,7 +10372,7 @@ function _broadcast(componentName, eventName, params) {
 var formatRegExp = /%[sdj%]/g;
 var warning = function warning() {}; // don't print warning message when in production env or node runtime
 
-if (typeof process !== 'undefined' && Object({"NODE_ENV":"development","VUE_APP_NAME":"吉吉国王的图书商城","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}) && "development" !== 'production' && typeof window !==
+if (typeof process !== 'undefined' && Object({"VUE_APP_NAME":"吉吉国王的图书商城","VUE_APP_PLATFORM":"mp-weixin","NODE_ENV":"development","BASE_URL":"/"}) && "development" !== 'production' && typeof window !==
 'undefined' && typeof document !== 'undefined') {
   warning = function warning(type, errors) {
     if (typeof console !== 'undefined' && console.warn) {
@@ -11657,11 +11705,11 @@ Schema.warning = warning;
 Schema.messages = messages;var _default =
 
 Schema;exports.default = _default;
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../HBuilderX.3.2.9.20210927/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 268)))
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../../../../../../HBuilderX.3.2.9.20210927/HBuilderX/plugins/uniapp-cli/node_modules/node-libs-browser/mock/process.js */ 276)))
 
 /***/ }),
 
-/***/ 268:
+/***/ 276:
 /*!********************************************************!*\
   !*** ./node_modules/node-libs-browser/mock/process.js ***!
   \********************************************************/
@@ -11692,7 +11740,7 @@ exports.binding = function (name) {
     var path;
     exports.cwd = function () { return cwd };
     exports.chdir = function (dir) {
-        if (!path) path = __webpack_require__(/*! path */ 269);
+        if (!path) path = __webpack_require__(/*! path */ 277);
         cwd = path.resolve(dir, cwd);
     };
 })();
@@ -11706,7 +11754,7 @@ exports.features = {};
 
 /***/ }),
 
-/***/ 269:
+/***/ 277:
 /*!***********************************************!*\
   !*** ./node_modules/path-browserify/index.js ***!
   \***********************************************/
@@ -12016,55 +12064,7 @@ var substr = 'ab'.substr(-1) === 'b'
     }
 ;
 
-/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 268)))
-
-/***/ }),
-
-/***/ 27:
-/*!***************************************************************************!*\
-  !*** F:/谷歌浏览器下载区/uView-cli/uView_default/uview-ui/libs/function/color.js ***!
-  \***************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // 为了让用户能够自定义主题，会逐步弃用此文件，各颜色通过css提供
-// 为了给某些特殊场景使用和向后兼容，无需删除此文件(2020-06-20)
-var color = {
-  primary: "#2979ff",
-  primaryDark: "#2b85e4",
-  primaryDisabled: "#a0cfff",
-  primaryLight: "#ecf5ff",
-  bgColor: "#f3f4f6",
-
-  info: "#909399",
-  infoDark: "#82848a",
-  infoDisabled: "#c8c9cc",
-  infoLight: "#f4f4f5",
-
-  warning: "#ff9900",
-  warningDark: "#f29100",
-  warningDisabled: "#fcbd71",
-  warningLight: "#fdf6ec",
-
-  error: "#fa3534",
-  errorDark: "#dd6161",
-  errorDisabled: "#fab6b6",
-  errorLight: "#fef0f0",
-
-  success: "#19be6b",
-  successDark: "#18b566",
-  successDisabled: "#71d5a1",
-  successLight: "#dbf1e1",
-
-  mainColor: "#303133",
-  contentColor: "#606266",
-  tipsColor: "#909399",
-  lightColor: "#c0c4cc",
-  borderColor: "#e4e7ed" };var _default =
-
-
-color;exports.default = _default;
+/* WEBPACK VAR INJECTION */}.call(this, __webpack_require__(/*! ./../node-libs-browser/mock/process.js */ 276)))
 
 /***/ }),
 
@@ -12114,7 +12114,25 @@ type2icon;exports.default = _default;
 
 /***/ }),
 
-/***/ 289:
+/***/ 29:
+/*!*********************************************************************************!*\
+  !*** F:/谷歌浏览器下载区/uView-cli/uView_default/uview-ui/libs/function/randomArray.js ***!
+  \*********************************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // 打乱数组
+function randomArray() {var array = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+  // 原理是sort排序,Math.random()产生0<= x < 1之间的数,会导致x-0.05大于或者小于0
+  return array.sort(function () {return Math.random() - 0.5;});
+}var _default =
+
+randomArray;exports.default = _default;
+
+/***/ }),
+
+/***/ 297:
 /*!********************************************************************************************!*\
   !*** F:/谷歌浏览器下载区/uView-cli/uView_default/uview-ui/components/u-parse/libs/MpHtmlParser.js ***!
   \********************************************************************************************/
@@ -12128,9 +12146,9 @@ type2icon;exports.default = _default;
  * @author JinYufeng
  * @listens MIT
  */
-var cfg = __webpack_require__(/*! ./config.js */ 290),
+var cfg = __webpack_require__(/*! ./config.js */ 298),
 blankChar = cfg.blankChar,
-CssHandler = __webpack_require__(/*! ./CssHandler.js */ 291),
+CssHandler = __webpack_require__(/*! ./CssHandler.js */ 299),
 windowWidth = uni.getSystemInfoSync().windowWidth;
 var emoji;
 
@@ -12705,25 +12723,7 @@ module.exports = MpHtmlParser;
 
 /***/ }),
 
-/***/ 29:
-/*!*********************************************************************************!*\
-  !*** F:/谷歌浏览器下载区/uView-cli/uView_default/uview-ui/libs/function/randomArray.js ***!
-  \*********************************************************************************/
-/*! no static exports found */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-Object.defineProperty(exports, "__esModule", { value: true });exports.default = void 0; // 打乱数组
-function randomArray() {var array = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-  // 原理是sort排序,Math.random()产生0<= x < 1之间的数,会导致x-0.05大于或者小于0
-  return array.sort(function () {return Math.random() - 0.5;});
-}var _default =
-
-randomArray;exports.default = _default;
-
-/***/ }),
-
-/***/ 290:
+/***/ 298:
 /*!**************************************************************************************!*\
   !*** F:/谷歌浏览器下载区/uView-cli/uView_default/uview-ui/components/u-parse/libs/config.js ***!
   \**************************************************************************************/
@@ -12813,14 +12813,14 @@ module.exports = cfg;
 
 /***/ }),
 
-/***/ 291:
+/***/ 299:
 /*!******************************************************************************************!*\
   !*** F:/谷歌浏览器下载区/uView-cli/uView_default/uview-ui/components/u-parse/libs/CssHandler.js ***!
   \******************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-var cfg = __webpack_require__(/*! ./config.js */ 290),
+var cfg = __webpack_require__(/*! ./config.js */ 298),
 isLetter = function isLetter(c) {return c >= 'a' && c <= 'z' || c >= 'A' && c <= 'Z';};
 
 function CssHandler(tagStyle) {
@@ -13755,8 +13755,8 @@ var store = new _vuex.default.Store({
   state: {
     // 如果上面从本地获取的lifeData对象下有对应的属性，就赋值给state中对应的变量
     // 加上vuex_前缀，是防止变量名冲突，也让人一目了然
-    vuex_user: lifeData.vuex_user ? lifeData.vuex_user : { name: '吉吉国王' },
-    vuex_token: lifeData.vuex_token ? lifeData.vuex_token : '' },
+    vuex_user: lifeData.vuex_user,
+    vuex_token: lifeData.vuex_token },
 
   mutations: {
     $uStore: function $uStore(state, payload) {
@@ -15193,13 +15193,25 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
     // 没有token，跳转登录页面
     if (!token) {
       // 回源跳转，拿到当前页
-      var currentRoute = getCurrentPages().pop().route;
+      var currentRoute;
+      if (getCurrentPages().pop().goodsId) {
+        // 如果url带参数，加上参数
+        currentRoute = "/".concat(getCurrentPages().pop().route, "?id=").concat(getCurrentPages().pop().goodsId);
+      } else {
+        currentRoute = "/".concat(getCurrentPages().pop().route);
+      }
       uni.setStorageSync("currentRoute", currentRoute);
 
-      vm.$u.toast("请先登录");
+      uni.showToast({
+        title: "请先登入",
+        icon: "error",
+        mask: true });
+
       setTimeout(function () {
         // 跳转登录页
-        vm.$u.route('/pages/auth/login');
+        vm.$u.route({
+          url: '/pages/auth/login' });
+
       }, 1500);
       return false;
     }
