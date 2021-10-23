@@ -65,6 +65,15 @@
             }
             
         }
+        ,{
+            "path" : "pages/center/collectGoods",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "商品收藏",
+                "enablePullDownRefresh": false
+            }
+            
+        }
     ],
 	"globalStyle": {
 		"navigationBarTextStyle": "black",

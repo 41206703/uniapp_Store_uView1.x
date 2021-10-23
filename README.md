@@ -19,3 +19,7 @@
 	<img src="https://obohe.com/i/2021/10/21/xmhra1.png" width="180">
    <img src="https://obohe.com/i/2021/10/21/xmoqfb.png" width="180">
 </figure>
+<figure class="third">
+    <img src="https://obohe.com/i/2021/10/23/xxdr8d.png" width="180">
+	<img src="https://obohe.com/i/2021/10/23/xxdr6j.png" width="180">
+</figure>

@@ -914,7 +914,7 @@ function initData(vueOptions, context) {
     try {
       data = data.call(context); // 支持 Vue.prototype 上挂的数据
     } catch (e) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"uView-demo","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"吉吉国王的图书商城","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.warn('根据 Vue 的 data 函数初始化小程序 data 失败，请尽量确保 data 函数中不访问 vm 对象，否则可能影响首次数据渲染速度。', data);
       }
     }
@@ -8605,7 +8605,7 @@ function type(obj) {
 
 function flushCallbacks$1(vm) {
     if (vm.__next_tick_callbacks && vm.__next_tick_callbacks.length) {
-        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"uView-demo","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+        if (Object({"NODE_ENV":"development","VUE_APP_NAME":"吉吉国王的图书商城","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:flushCallbacks[' + vm.__next_tick_callbacks.length + ']');
@@ -8626,14 +8626,14 @@ function nextTick$1(vm, cb) {
     //1.nextTick 之前 已 setData 且 setData 还未回调完成
     //2.nextTick 之前存在 render watcher
     if (!vm.__next_tick_pending && !hasRenderWatcher(vm)) {
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"uView-demo","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"吉吉国王的图书商城","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + vm._uid +
                 ']:nextVueTick');
         }
         return nextTick(cb, vm)
     }else{
-        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"uView-demo","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
+        if(Object({"NODE_ENV":"development","VUE_APP_NAME":"吉吉国王的图书商城","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG){
             var mpInstance$1 = vm.$scope;
             console.log('[' + (+new Date) + '][' + (mpInstance$1.is || mpInstance$1.route) + '][' + vm._uid +
                 ']:nextMPTick');
@@ -8719,7 +8719,7 @@ var patch = function(oldVnode, vnode) {
     });
     var diffData = this.$shouldDiffData === false ? data : diff(data, mpData);
     if (Object.keys(diffData).length) {
-      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"uView-demo","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
+      if (Object({"NODE_ENV":"development","VUE_APP_NAME":"吉吉国王的图书商城","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}).VUE_APP_DEBUG) {
         console.log('[' + (+new Date) + '][' + (mpInstance.is || mpInstance.route) + '][' + this._uid +
           ']差量更新',
           JSON.stringify(diffData));
@@ -10324,7 +10324,7 @@ function _broadcast(componentName, eventName, params) {
 var formatRegExp = /%[sdj%]/g;
 var warning = function warning() {}; // don't print warning message when in production env or node runtime
 
-if (typeof process !== 'undefined' && Object({"NODE_ENV":"development","VUE_APP_NAME":"uView-demo","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}) && "development" !== 'production' && typeof window !==
+if (typeof process !== 'undefined' && Object({"NODE_ENV":"development","VUE_APP_NAME":"吉吉国王的图书商城","VUE_APP_PLATFORM":"mp-weixin","BASE_URL":"/"}) && "development" !== 'production' && typeof window !==
 'undefined' && typeof document !== 'undefined') {
   warning = function warning(type, errors) {
     if (typeof console !== 'undefined' && console.warn) {
@@ -15141,17 +15141,19 @@ Object.defineProperty(exports, "__esModule", { value: true });exports.default = 
   // 商品
   vm.$u.api.getGoodsList = function () {var params = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};return vm.$u.get("/api/goods", params);}; //商品列表
   vm.$u.api.getGoodsDetail = function (id) {return vm.$u.get("/api/goods/".concat(id));}; //商品详情
+  vm.$u.api.getCollect = function () {var page = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 1;return vm.$u.get('/api/collects', { page: page });}; //获取收藏商品
   vm.$u.api.isCollect = function (id) {return vm.$u.post("/api/collects/goods/".concat(id));}; //商品收藏或取消
 
   // 购物车相关
   vm.$u.api.addCart = function (params) {return vm.$u.post("/api/carts", params);}; //添加购物车
   vm.$u.api.cartGoods = function () {return vm.$u.get("/api/carts?include=goods");}; //购物车列表
-  vm.$u.api.numChange = function (cart, num) {return vm.$u.get("/api/carts/".concat(cart), num);}; //购物车商品数量改变
+  vm.$u.api.numChange = function (cart, num) {return vm.$u.put("/api/carts/".concat(cart), { num: num });}; //购物车商品数量改变
+  vm.$u.api.delCartGoods = function (cart) {return vm.$u.delete("/api/carts/".concat(cart));}; //将商品移出购物车
+  vm.$u.api.isCheck = function (cart_ids) {return vm.$u.patch("/api/carts/checked", { cart_ids: cart_ids });}; //将商品选中与否
 
   // 个人中心
   vm.$u.api.getUserInfo = function () {return vm.$u.get('/api/user');}; //获取用户信息
   vm.$u.api.setUserInfo = function (params) {return vm.$u.put('/api/user', params);}; //更新用户信息
-
 
   // 认证相关的
   vm.$u.api.authLogin = function (params) {return vm.$u.post('/api/auth/login', params);}; //登录

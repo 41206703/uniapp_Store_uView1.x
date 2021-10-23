@@ -6,7 +6,12 @@
 			</view>
 			<view class="u-flex-1">
 				<view class="u-font-18 u-p-b-20">{{userInfo.name}}</view>
-				<view class="u-font-14 u-tips-color">邮箱: {{userInfo.email}}</view>
+				<view class="u-font-14 u-tips-color">
+					<text>邮箱: {{userInfo.email}}</text>
+					<br>
+					<text class="small">创建日期:{{userInfo.created_at}}</text>
+				</view>
+				
 			</view>
 		</view>
 		
@@ -18,15 +23,14 @@
 		<view class="u-m-t-20">
 			<u-cell-group>
 				<u-cell-item icon="rmb-circle" title="所有订单"></u-cell-item>
-				<u-cell-item icon="star" title="商品收藏"></u-cell-item>
+				<u-cell-item icon="star" title="商品收藏" @tap="jump('pages/center/collectGoods')"></u-cell-item>
 				<u-cell-item icon="map" title="收货地址"></u-cell-item>
 			</u-cell-group>
 		</view>
 		
 		<view class="u-m-t-20">
-			<u-cell-group>
-				<u-cell-item icon="reload" title="退出登录" @tap="showLoginout"></u-cell-item>
-			</u-cell-group>
+			
+			<u-button type="error" :ripple="true" @click="showLoginout">退出登录</u-button>
 		</view>
 		<!-- 退出登录模态框 -->
 		<u-modal v-model="isShowLoginout" content="确定退出登录吗？" :show-cancel-button="true" @confirm="loginOut" @cancel="showLoginout"></u-modal>
