@@ -25,7 +25,7 @@
 								<text class="price u-font-34">￥{{goods.goods.price}}</text>
 								<u-number-box v-model="goods.num" :min="1" :max="goods.goods.stock" :index="goods.id"
 									@change="numChange"></u-number-box>
-								<u-icon @tap.stop="removeGoods(goods.id)" name="trash" color="#e83333" size="36">
+								<u-icon @tap="removeGoods(goods.id)" name="trash" color="#e83333" size="36">
 								</u-icon>
 							</view>
 						</view>
@@ -174,7 +174,7 @@
 
 <style scoped lang="scss">
 	.wrap {
-		height: 80vh;
+		min-height: 80vh;
 		.empty {
 			height: 80vh;
 		}

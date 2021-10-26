@@ -71,17 +71,17 @@
 		async onLoad() {
 			// const params={
 			// 	category_id:2,
-			// 	description:"贵物合集",
-			// 	price:666,
-			// 	details:"贵物合集是吧",
-			// 	stock:6,
-			// 	title:"five刀",
-			// 	//pics:["https://tse3-mm.cn.bing.net/th/id/OIP-C.Zm07EYd-9wgHwdjP8SxqdQHaHa?w=161&h=180&c=7&r=0&o=5&pid=1.7"]
-			// 	cover:"https://tse4-mm.cn.bing.net/th/id/OIP-C.lRMMFGzgIsZa90yiBmeuYgHaEn?w=263&h=180&c=7&r=0&o=5&pid=1.7"
+			// 	description:"刀哥",
+			// 	price:19,
+			// 	details:"刀哥dog",
+			// 	stock:99,
+			// 	title:"《啊？》",
+			// 	// pics:["https://ts3.cn.mm.bing.net/th/id/OIP-C.A1mkSziVLr0JaKTG5TACtAHaEo?pid=ImgDet&rs=1"],
+			// 	cover:"https://ts1.cn.mm.bing.net/th/id/R-C.7ffc7c3a12c64f7a218626d04782455c?rik=iXnx6mCcBGr%2bgg&riu=http%3a%2f%2fwx4.sinaimg.cn%2fmw690%2f6a04b428gy1ful02sqvwfg209q08swg6.gif&ehk=kJ0ydvYbzRh2GbDnshKLCnTF6RyIsKNh8okn4IQeAcc%3d&risl=&pid=ImgRaw&r=0"
 			// 	}
-			// await this.$u.api.addGoods1(343,params)//{title:"吉吉国王",img:"https://obohe.com/i/2021/10/22/h0e87c.jpg"}
+			// await this.$u.api.addGoods1(334,params)//{title:"吉吉国王",img:"https://obohe.com/i/2021/10/22/h0e87c.jpg"}
 			// const res2=await this.$u.api.addGoods2()//{title:"吉吉国王",img:"https://obohe.com/i/2021/10/22/h0e87c.jpg"}
-			// await this.$u.api.addGoods3(343)//{title:"吉吉国王",img:"https://obohe.com/i/2021/10/22/h0e87c.jpg"}
+			// await this.$u.api.addGoods3(339)//{title:"吉吉国王",img:"https://obohe.com/i/2021/10/22/h0e87c.jpg"}
 			// console.log(res2)
 			this.getGoodsData()
 		},

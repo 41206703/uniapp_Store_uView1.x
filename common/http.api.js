@@ -34,7 +34,10 @@ const install = (Vue, vm) => {
 	vm.$u.api.addGoods1 = (id,params) => vm.$u.put(`/api/admin/goods/${id}`,params)//xiugai商品
 	vm.$u.api.addGoods2 = () => vm.$u.get(`/api/admin/goods`)//商品列表
 	vm.$u.api.addGoods3 = id => vm.$u.patch(`/api/admin/goods`,id)//上架列表
-	vm.$u.api.addGoods4 = good => vm.$u.patch(`/api/admin/goods/${good}/recommend`)//推荐商品
+	
+	vm.$u.api.getBanner = () => vm.$u.get(`/api/admin/slides`)//获取轮播
+	vm.$u.api.setBanner = (slide,params) => vm.$u.put(`/api/admin/slides/${slide}`,params)//修改轮播
+	vm.$u.api.sortBanner = (slide,seq) => vm.$u.patch(`/api/admin/slides/${slide}/seq`,{seq})//修改轮播
 }
 
 export default {

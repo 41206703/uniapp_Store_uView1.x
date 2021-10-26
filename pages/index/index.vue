@@ -22,8 +22,18 @@
 
 <script>
 	export default {
-		onLoad() {
+		async onLoad() {
 			this.getIndexData()
+			// const params={
+			// 	title:"一眼万年",
+			// 	// 	cover:"https://ts1.cn.mm.bing.net/th/id/R-C.7ffc7c3a12c64f7a218626d04782455c?rik=iXnx6mCcBGr%2bgg&riu=http%3a%2f%2fwx4.sinaimg.cn%2fmw690%2f6a04b428gy1ful02sqvwfg209q08swg6.gif&ehk=kJ0ydvYbzRh2GbDnshKLCnTF6RyIsKNh8okn4IQeAcc%3d&risl=&pid=ImgRaw&r=0"
+			// 	img:"https://ts2.cn.mm.bing.net/th/id/OIP-C.xtw-5wgzdbWqoEr9tgJIMgHaEo?w=285&h=180&c=7&r=0&o=5&pid=1.7",
+				
+			// }
+			// await this.$u.api.setBanner(81,params)
+			// // await this.$u.api.sortBanner(81,1)
+			// const res=await this.$u.api.getBanner()
+			// console.log(res)
 		},
 		data() {
 			return {
