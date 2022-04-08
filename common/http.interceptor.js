@@ -20,7 +20,7 @@ const install = (Vue, vm) => {
 		return config;
 		
 	}
-
+	
 	// 响应拦截，判断状态码是否通过
 	Vue.prototype.$u.http.interceptor.response = (res) => {
 		const {
